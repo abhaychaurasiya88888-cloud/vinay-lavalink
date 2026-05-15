@@ -1,0 +1,6 @@
+cat > render.yaml << 'EOF'
+services:
+  - type: web
+    name: vinay-lavalink
+    env: docker
+EOF

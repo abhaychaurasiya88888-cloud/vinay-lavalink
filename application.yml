@@ -1,0 +1,8 @@
+cat > application.yml << 'EOF'
+server:
+  port: 2333
+
+lavalink:
+  server:
+    password: "vinaymusic"
+EOF
