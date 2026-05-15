@@ -4,6 +4,7 @@ server:
 lavalink:
   server:
     password: ${LAVALINK_SERVER_PASSWORD:vinaymusic}
+
     sources:
       youtube: true
       bandcamp: true
@@ -25,7 +26,6 @@ lavalink:
       channelMix: true
       lowPass: true
 
-    nonAllocatingFrameBuffer: false
     bufferDurationMs: 400
     opusEncodingQuality: 10
     resamplingQuality: HIGH
@@ -36,6 +36,10 @@ lavalink:
     youtubeSearchEnabled: true
     soundcloudSearchEnabled: true
 
+  plugins:
+    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.0.0-beta.5"
+      repository: "https://maven.lavalink.dev/releases"
+
 plugins:
   youtube:
     enabled: true
@@ -44,6 +48,7 @@ plugins:
     providers:
       - "ytsearch:%QUERY%"
       - "ytmsearch:%QUERY%"
+
     sources:
       spotify: true
       applemusic: true
@@ -55,23 +60,3 @@ logging:
   level:
     root: INFO
     lavalink: INFO
-
-  file:
-    path: ./logs/
-
-  logback:
-    rollingpolicy:
-      max-file-size: 1GB
-      max-history: 30
-
-metrics:
-  prometheus:
-    enabled: false
-
-sentry:
-  dsn: ""
-
-lavalink:
-  plugins:
-    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.0.0-beta.5"
-      repository: "https://maven.lavalink.dev/releases"
